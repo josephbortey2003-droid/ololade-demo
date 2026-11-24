@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Ololade Kehinde Agbarha Daycare | Licensed Family Child Care in Worcester, MA</title>
+<meta name="description" content="Ololade Kehinde Agbarha Daycare Center, Gates Lane, Worcester MA 01603. Licensed family child care (Massachusetts EEC license 9142250), small group of up to 10 children, bright playroom, reading corner and big outdoor play yard. 5.0 stars from parents. Schedule a visit on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grandstander:wght@600;700;800&family=Mulish:wght@400;500;600;700&display=swap">
+<style>
+/* Ololade Kehinde Agbarha Daycare — mixed references + their own space:
+   Gooseberry Lane (Framer daycare): hero of floating circle photos + "Book a tour"; big rounded photo cards with a label pill.
+   Kidjoy (Framer preschool): multicolour headline words, hand-drawn doodles (sun, star, squiggle), alternating photo/text rows.
+   Brand from THEIR rooms: primary red / green / blue / yellow toy bins, alphabet + "Reading" wall art, wood floors, green gazebo.
+   US childcare standard: state license shown up front (MA EEC #), small group size, real photos of the space,
+   parent reviews, "schedule a visit" form; hours/ages/tuition = "ask us" (not published, never invented). */
+:root {
+  --red: #e5483f; --green: #2f9e57; --blue: #2d7fd3; --yellow: #ffc83d; --orange: #f28a2e;
+  --cream: #fff8ec; --ink: #23263a; --mute: #5b5f74; --line: #efe4cf;
+  --fun: "Grandstander", "Comic Sans MS", system-ui, sans-serif; --body: "Mulish", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--cream); color: var(--ink); font: 500 17.5px/1.65 var(--body); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+section[id] { scroll-margin-top: 76px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--fun); font-weight: 800; margin: 0; line-height: 1.05; letter-spacing: -.01em; }
+.c1 { color: var(--red); } .c2 { color: var(--green); } .c3 { color: var(--blue); } .c4 { color: var(--orange); }
+.demo { background: var(--ink); color: #e6e7ef; font-size: 13px; text-align: center; padding: 7px 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: 700 16.5px/1 var(--fun); padding: 16px 24px; border-radius: 16px; background: var(--yellow); color: var(--ink); text-decoration: none; border: 0; cursor: pointer; box-shadow: 0 5px 0 #d9a21a; transition: transform .15s, box-shadow .15s; }
+.btn:hover { transform: translateY(2px); box-shadow: 0 3px 0 #d9a21a; }
+.btn.blue { background: var(--blue); color: #fff; box-shadow: 0 5px 0 #1f5fa3; }
+.btn.white { background: #fff; box-shadow: 0 5px 0 var(--line); }
+.btn svg { width: 20px; height: 20px; }
+.tag { display: inline-flex; align-items: center; gap: 8px; font: 800 13px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; padding: 8px 13px; border-radius: 999px; background: #fff; color: var(--green); border: 2px solid var(--line); }
+
+header.top { position: sticky; top: 0; z-index: 40; background: rgba(255,248,236,.96); border-bottom: 2px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-block: 10px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; width: 44px; height: 44px; flex: none; }
+.blocks span { border-radius: 6px; display: grid; place-items: center; font: 800 13px/1 var(--fun); color: #fff; }
+.brand b { display: block; font: 800 19px/1.05 var(--fun); }
+.brand small { display: block; font: 700 12.5px/1.2 var(--body); color: var(--mute); }
+.top nav { display: flex; align-items: center; gap: 24px; font: 700 15.5px/1 var(--body); }
+.top nav a:not(.btn) { text-decoration: none; }
+.top nav a:not(.btn):hover { color: var(--blue); }
+.top nav .btn { padding: 12px 18px; font-size: 15px; }
+.menu-btn { display: none; background: #fff; border: 2px solid var(--line); border-radius: 14px; padding: 10px 14px; font: 800 14px/1 var(--body); color: var(--ink); cursor: pointer; align-items: center; gap: 8px; }
+.menu-btn i { display: grid; gap: 4px; } .menu-btn i b { display: block; width: 16px; height: 2px; background: var(--ink); border-radius: 2px; }
+.drop { display: none; position: fixed; left: 12px; right: 12px; z-index: 45; background: #fff; border-radius: 20px; box-shadow: 0 24px 50px rgba(35,38,58,.25); overflow: hidden; }
+.drop.open { display: block; }
+.drop a { display: block; padding: 16px 22px; font: 800 21px/1 var(--fun); text-decoration: none; border-top: 2px solid var(--line); }
+.drop a:first-child { border-top: 0; }
+.scrim { display: none; position: fixed; inset: 0; z-index: 35; background: rgba(35,38,58,.35); }
+.scrim.open { display: block; }
+
+/* hero: Gooseberry floating circles + Kidjoy colour words */
+.hero { position: relative; overflow: hidden; }
+.circles { position: relative; height: 300px; max-width: 1100px; margin: 28px auto 0; }
+.circles figure { position: absolute; margin: 0; border-radius: 50%; overflow: hidden; border: 6px solid #fff; box-shadow: 0 16px 30px rgba(35,38,58,.15); }
+.circles img { width: 100%; height: 100%; object-fit: cover; }
+.circles .p1 { width: 210px; height: 210px; left: 2%; top: 60px; }
+.circles .p2 { width: 250px; height: 250px; left: 26%; top: 0; }
+.circles .p3 { width: 200px; height: 200px; left: 54%; top: 80px; }
+.circles .p4 { width: 230px; height: 230px; right: 2%; top: 20px; }
+.doodle { position: absolute; pointer-events: none; }
+.hero .copy { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: end; padding-block: 30px 56px; }
+.hero h1 { font-size: clamp(40px, 4.6vw, 62px); }
+.hero p { margin: 0 0 22px; font-size: 19px; color: var(--mute); }
+.ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.lic { display: inline-flex; gap: 10px; align-items: center; margin-top: 22px; background: #fff; border: 2px solid var(--line); border-radius: 16px; padding: 10px 14px; font: 700 14.5px/1.35 var(--body); }
+.lic i { font-style: normal; width: 34px; height: 34px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font: 800 16px/1 var(--fun); flex: none; }
+
+/* facts strip */
+.facts { background: #fff; border-block: 2px solid var(--line); }
+.facts .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.facts div { padding: 20px 14px; text-align: center; border-left: 2px dashed var(--line); }
+.facts div:first-child { border-left: 0; }
+.facts b { display: block; font: 800 28px/1.1 var(--fun); }
+.facts span { font-size: 15px; color: var(--mute); }
+
+section { padding-block: clamp(64px, 8vw, 104px); }
+.sh { text-align: center; max-width: 700px; margin: 0 auto 40px; }
+.sh h2 { font-size: clamp(36px, 4.6vw, 58px); margin-top: 14px; }
+.sh p { color: var(--mute); font-size: 18px; margin: 12px auto 0; }
+
+/* Kidjoy alternating rows */
+.zig { display: grid; gap: 56px; }
+.zrow { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
+.zrow:nth-child(even) .zimg { order: 2; }
+.zimg { position: relative; }
+.zimg img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 32px; }
+.zimg .pill { position: absolute; left: 16px; bottom: 16px; background: #fff; font: 800 14px/1 var(--body); padding: 10px 14px; border-radius: 999px; }
+.zrow h3 { font-size: clamp(30px, 3.4vw, 42px); margin-bottom: 12px; }
+.zrow p { color: var(--mute); font-size: 18px; margin: 0; }
+.zrow ul { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 8px; }
+.zrow li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; }
+.zrow li::before { content: "★"; color: var(--yellow); font-size: 20px; line-height: 1.2; -webkit-text-stroke: 1px #d9a21a; }
+
+/* Gooseberry photo cards (gallery) */
+.gal { background: #fff; }
+.cards { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
+.card { position: relative; margin: 0; border-radius: 28px; overflow: hidden; min-width: 0; min-height: 300px; background: var(--line); }
+.card img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.card figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; background: rgba(255,255,255,.95); border-radius: 18px; padding: 12px 14px; font: 800 17px/1.2 var(--fun); }
+.card figcaption small { display: block; font: 600 14px/1.35 var(--body); color: var(--mute); margin-top: 3px; }
+.card.big { grid-row: span 2; min-height: 520px; }
+
+/* reviews */
+.rgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.rv-card { margin: 0; background: #fff; border-radius: 26px; padding: 26px; border: 2px solid var(--line); position: relative; }
+.rv-card:nth-child(1) { border-top: 8px solid var(--red); } .rv-card:nth-child(2) { border-top: 8px solid var(--blue); } .rv-card:nth-child(3) { border-top: 8px solid var(--green); }
+.rv-card .st { color: var(--yellow); letter-spacing: 3px; font-size: 18px; -webkit-text-stroke: .6px #d9a21a; }
+.rv-card p { font-size: 17.5px; margin: 10px 0 12px; }
+.rv-card cite { font-style: normal; font: 800 14px/1 var(--body); color: var(--mute); }
+
+/* visit form */
+.visit { background: var(--blue); color: #fff; position: relative; overflow: hidden; }
+.visit .grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 44px; align-items: start; position: relative; }
+.visit h2 { font-size: clamp(36px, 4.6vw, 58px); margin: 14px 0 14px; }
+.visit .lead { color: #e3eefb; font-size: 18px; }
+.visit .tag { color: var(--blue); }
+.ask { margin-top: 22px; display: grid; gap: 10px; }
+.ask div { background: rgba(255,255,255,.12); border-radius: 16px; padding: 14px 16px; font-weight: 600; }
+.ask b { font: 800 17px/1.2 var(--fun); display: block; }
+form.card2 { background: #fff; color: var(--ink); border-radius: 28px; padding: 28px; min-width: 0; box-shadow: 0 10px 0 #1f5fa3; }
+form.card2 h3 { font-size: 28px; margin-bottom: 16px; }
+.f { display: grid; gap: 7px; font: 800 14.5px/1.2 var(--body); margin-bottom: 15px; min-width: 0; }
+.f input, .f select, .f textarea { font: 500 16.5px/1.4 var(--body); padding: 13px 14px; border: 2px solid var(--line); border-radius: 14px; background: var(--cream); color: var(--ink); width: 100%; }
+.f textarea { min-height: 80px; resize: vertical; }
+.f input:focus, .f select:focus, .f textarea:focus { outline: 2px solid var(--blue); border-color: var(--blue); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.err { display: none; color: #b3261e; font: 800 14.5px/1.4 var(--body); margin: -4px 0 12px; }
+.err.show { display: block; }
+.fine { font-size: 13.5px; color: var(--mute); margin: 12px 0 0; }
+
+.where .grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
+.where h2 { font-size: clamp(34px, 4.4vw, 52px); margin: 14px 0 14px; }
+.where p { color: var(--mute); font-size: 18px; }
+.map { border-radius: 28px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--line); border: 6px solid #fff; box-shadow: 0 14px 30px rgba(35,38,58,.12); }
+.map iframe { width: 100%; height: 100%; border: 0; display: block; }
+footer { background: var(--ink); color: #c9cbd8; padding-block: 40px 110px; text-align: center; font-size: 15.5px; }
+footer b { display: block; font: 800 24px/1.2 var(--fun); color: #fff; margin-bottom: 8px; }
+.dock { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 30; display: none; gap: 8px; }
+.dock a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font: 800 16px/1 var(--fun); padding: 16px 10px; border-radius: 16px; box-shadow: 0 10px 24px rgba(35,38,58,.3); }
+.dock .call { flex: 0 0 32%; background: #fff; color: var(--ink); }
+.dock .bk { background: var(--yellow); color: var(--ink); }
+.rv { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.rv.in { opacity: 1; transform: none; }
+
+@media (max-width: 1000px) {
+  .top nav { display: none; } .menu-btn { display: inline-flex; }
+  .hero .copy, .zrow, .visit .grid, .where .grid { grid-template-columns: minmax(0, 1fr); }
+  .zrow:nth-child(even) .zimg { order: 0; }
+  .circles { height: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: center; }
+  .circles figure { position: static; width: 100% !important; height: auto !important; aspect-ratio: 1; }
+  .circles .p2, .circles .p4 { transform: translateY(-14px); } .circles .p1, .circles .p3 { transform: translateY(14px); }
+  .facts .wrap { grid-template-columns: 1fr 1fr; }
+  .facts div:nth-child(3) { border-left: 0; } .facts div:nth-child(n+3) { border-top: 2px dashed var(--line); }
+  .cards { grid-template-columns: 1fr 1fr; } .card.big { grid-column: 1 / -1; grid-row: auto; min-height: 340px; }
+  .rgrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .brand b { font-size: 16px; } .brand small { display: none; }
+  .doodle { display: none; }
+  .circles { height: auto; margin-top: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 22px; align-items: center; padding-inline: 34px; }
+  .circles figure { position: static; width: 100% !important; height: auto !important; aspect-ratio: 1; border-width: 3px; }
+  .circles .p2, .circles .p4 { transform: translateY(-10px); } .circles .p1, .circles .p3 { transform: translateY(10px); }
+  .hero h1 { font-size: 42px; }
+  .hero p { font-size: 17.5px; }
+  .ctas .btn { flex: 1 1 100%; }
+  .cards { grid-template-columns: 1fr; } .card { min-height: 260px; }
+  .two { grid-template-columns: 1fr; gap: 0; }
+  form.card2 { padding: 22px 16px; }
+  .dock { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } .rv { opacity: 1; transform: none; } html { scroll-behavior: auto; } }
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 000-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.1 5.1 0 001.1 2.7 11.7 11.7 0 004.5 4c1.7.7 2.3.7 3.1.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></symbol>
+  <symbol id="sun" viewBox="0 0 80 80"><circle cx="40" cy="40" r="15" fill="none" stroke="#ffc83d" stroke-width="4"/><g stroke="#ffc83d" stroke-width="4" stroke-linecap="round"><path d="M40 6v10M40 64v10M6 40h10M64 40h10M16 16l7 7M57 57l7 7M64 16l-7 7M23 57l-7 7"/></g><path d="M34 42q6 6 12 0" fill="none" stroke="#ffc83d" stroke-width="3" stroke-linecap="round"/><circle cx="35" cy="36" r="2" fill="#ffc83d"/><circle cx="45" cy="36" r="2" fill="#ffc83d"/></symbol>
+  <symbol id="star" viewBox="0 0 60 60"><path d="M30 6l7 15 16 2-12 11 3 16-14-8-14 8 3-16L7 23l16-2z" fill="none" stroke="#e5483f" stroke-width="3.5" stroke-linejoin="round"/></symbol>
+  <symbol id="squig" viewBox="0 0 120 30"><path d="M4 18q10-14 20 0t20 0 20 0 20 0 20 0 12-4" fill="none" stroke="#2f9e57" stroke-width="4" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<div class="demo">Demo website made for Ololade Kehinde Agbarha Daycare Center.</div>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Ololade Kehinde Agbarha Daycare home"><span class="blocks" aria-hidden="true"><span style="background:var(--red)">O</span><span style="background:var(--blue)">K</span><span style="background:var(--green)">A</span><span style="background:var(--yellow);color:var(--ink)">★</span></span><span><b>Ololade Kehinde Agbarha</b><small>Daycare Center · Worcester</small></span></a>
+  <nav aria-label="Primary"><a href="#inside">Our space</a><a href="#photos">Photos</a><a href="#parents">Parents say</a><a href="#where">Find us</a><a class="btn" href="#visit">Schedule a visit</a></nav>
+  <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="drop"><i><b></b><b></b><b></b></i>Menu</button>
+</div></header>
+<div class="scrim" id="scrim"></div>
+<nav class="drop" id="drop" aria-label="Menu"><a href="#visit">Schedule a visit</a><a href="#inside">Our space</a><a href="#photos">Photos</a><a href="#parents">Parents say</a><a href="#where">Find us</a></nav>
+
+<div class="hero" id="top">
+  <svg class="doodle" style="right:3%;top:330px;width:86px;height:86px" aria-hidden="true"><use href="#sun"/></svg>
+  <svg class="doodle" style="left:46%;top:8px;width:46px;height:46px" aria-hidden="true"><use href="#star"/></svg>
+  <div class="circles wrap rv">
+    <figure class="p1"><img src="img/reading.webp" alt="Reading corner with bookshelves" width="1100" height="825"></figure>
+    <figure class="p2"><img src="img/room.webp" alt="Bright playroom with a child-size table and toys" width="1100" height="825"></figure>
+    <figure class="p3"><img src="img/gazebo.webp" alt="Garden gazebo with little chairs" width="1100" height="674"></figure>
+    <figure class="p4"><img src="img/yard2.webp" alt="Outdoor play toys on the lawn" width="1100" height="1044"></figure>
+  </div>
+  <div class="wrap copy">
+    <div>
+      <span class="tag rv">Licensed family child care · Worcester</span>
+      <h1 class="rv" style="margin-top:16px"><span class="c1">Play</span>, <span class="c3">learn</span> &amp; <span class="c2">grow</span> in a home full of love.</h1>
+    </div>
+    <div>
+      <p class="rv">A warm, safe, small-group daycare on Gates Lane. Kind and patient teachers, a bright playroom, a reading corner and a big backyard to play in.</p>
+      <div class="ctas rv"><a class="btn" href="#visit"><svg aria-hidden="true"><use href="#wa"/></svg>Schedule a visit</a><a class="btn white" href="tel:+17743035976">Call (774) 303-5976</a></div>
+      <div class="lic rv"><i>✓</i><span>Licensed by Massachusetts EEC<br><span style="font-weight:600;color:var(--mute)">License #9142250 · since 2024</span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="facts"><div class="wrap">
+  <div><b class="c1">5.0 ★</b><span>from parents on Google</span></div>
+  <div><b class="c3">10 max</b><span>small group, lots of attention</span></div>
+  <div><b class="c2">Big yard</b><span>room to run and play outside</span></div>
+  <div><b class="c4">Licensed</b><span>MA Dept. of Early Education</span></div>
+</div></div>
+
+<section id="inside"><div class="wrap">
+  <div class="sh rv"><span class="tag">Our space</span><h2>A day at <span class="c3">our</span> daycare</h2><p>Everything here is set up for little ones to explore, play and feel at home.</p></div>
+  <div class="zig">
+    <div class="zrow rv">
+      <div class="zimg"><img src="img/toys.webp" alt="Playroom with stuffed animals, toy shelves and a soft play mat" loading="lazy"><span class="pill">🧸 The playroom</span></div>
+      <div><h3><span class="c1">Play</span> that builds big skills</h3><p>A bright, clean playroom with puzzles, blocks, pretend play and soft mats, all at child height.</p><ul><li>Toys sorted in easy-reach bins</li><li>Soft play mats for the little ones</li><li>Child-size tables and chairs</li></ul></div>
+    </div>
+    <div class="zrow rv">
+      <div class="zimg"><img src="img/reading.webp" alt="Reading corner with picture books on low shelves" loading="lazy"><span class="pill">📚 Reading corner</span></div>
+      <div><h3><span class="c3">Learning</span> every day</h3><p>An alphabet wall, a cosy reading corner and a toy piano make letters, books and music part of everyday fun.</p><ul><li>Picture books on low shelves</li><li>Letters and numbers on the walls</li><li>A toy piano for little musicians</li></ul></div>
+    </div>
+    <div class="zrow rv">
+      <div class="zimg"><img src="img/yard.webp" alt="Large fenced backyard with a slide and outdoor toys" loading="lazy"><span class="pill">🌳 The backyard</span></div>
+      <div><h3><span class="c2">Outdoor</span> fun</h3><p>A big backyard with a slide, water table, balls and a shady gazebo with little chairs just their size.</p><ul><li>Room to run, climb and play</li><li>Shady gazebo with little chairs</li><li>Slide, balls and water table</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="gal" id="photos"><div class="wrap">
+  <div class="sh rv"><span class="tag">Photos</span><h2>Take a <span class="c1">peek</span> inside</h2><p>Real photos of our home daycare, inside and out.</p></div>
+  <div class="cards">
+    <figure class="card big rv"><img src="img/tables.webp" alt="Main room with a table, chairs and toy shelves" loading="lazy"><figcaption>The main room<small>Child-size tables, toys and books</small></figcaption></figure>
+    <figure class="card rv"><img src="img/music.webp" alt="Toy piano, globe and bookshelf" loading="lazy"><figcaption>Music corner</figcaption></figure>
+    <figure class="card rv"><img src="img/wall.webp" alt="Alphabet and reading wall decals" loading="lazy"><figcaption>ABC wall</figcaption></figure>
+    <figure class="card rv"><img src="img/gazebo.webp" alt="Garden gazebo with small chairs" loading="lazy"><figcaption>Story gazebo</figcaption></figure>
+    <figure class="card rv"><img src="img/yard2.webp" alt="Water table and outdoor toys on the lawn" loading="lazy"><figcaption>Water play</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="parents"><div class="wrap">
+  <div class="sh rv"><span class="tag">Parents say</span><h2>Loved by <span class="c2">Worcester</span> families</h2><p>5.0 stars from parents on Google.</p></div>
+  <div class="rgrid">
+    <figure class="rv-card rv"><div class="st">★★★★★</div><p>"We love this daycare! The teachers are kind, caring, and patient. Our daughter adjusted so well and enjoys going every day. We always feel that she is safe, loved, and well cared for."</p><cite>Parent · Google review</cite></figure>
+    <figure class="rv-card rv"><div class="st">★★★★★</div><p>"I have 2 kids there. It's a good environment, safe, clean and the kids are so happy. The kids ask me every morning for school."</p><cite>Parent of two · Google review</cite></figure>
+    <figure class="rv-card rv"><div class="st">★★★★★</div><p>"So warm and caring. My 3-year-old son has been cared for by them for a year. I have truly appreciated the work they have done for my son."</p><cite>Parent · Google review</cite></figure>
+  </div>
+</div></section>
+
+<section class="visit" id="visit">
+  <svg class="doodle" style="right:4%;top:24px;width:120px;height:30px" aria-hidden="true"><use href="#squig"/></svg>
+  <div class="wrap grid">
+    <div>
+      <span class="tag rv">Come and see</span>
+      <h2 class="rv">Schedule a visit</h2>
+      <p class="lead rv">Tell us a little about your child and when you'd like to visit. Your message goes straight to us on WhatsApp.</p>
+      <div class="ask rv">
+        <div><b>Ages &amp; openings</b>Ask us which ages we have space for right now.</div>
+        <div><b>Hours &amp; tuition</b>We'll share our hours and rates when you get in touch.</div>
+        <div><b>Licensed &amp; small</b>MA EEC license #9142250, up to 10 children.</div>
+      </div>
+    </div>
+    <form class="card2 rv" id="form" novalidate>
+      <h3>Visit request</h3>
+      <div class="two">
+        <label class="f"><span>Your name</span><input name="name" autocomplete="name"></label>
+        <label class="f"><span>Child's age</span><select name="age"><option>Under 1 year</option><option>1 year</option><option selected>2 years</option><option>3 years</option><option>4 years</option><option>5 years or older</option></select></label>
+      </div>
+      <div class="two">
+        <label class="f"><span>Start date (about)</span><input type="month" name="start"></label>
+        <label class="f"><span>Days needed</span><select name="days"><option>Full week</option><option>3–4 days</option><option>1–2 days</option><option>Not sure yet</option></select></label>
+      </div>
+      <label class="f"><span>Best day to visit</span><input type="date" name="visit"></label>
+      <label class="f"><span>Questions (optional)</span><textarea name="note" placeholder="Allergies, nap times, pick-up times…"></textarea></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn blue" type="submit" style="width:100%"><svg aria-hidden="true"><use href="#wa"/></svg>Send on WhatsApp</button>
+      <p class="fine">We reply to set a time for your visit.</p>
+    </form>
+  </div>
+</section>
+
+<section class="where" id="where"><div class="wrap grid">
+  <div class="rv">
+    <span class="tag">Find us</span>
+    <h2>Gates Lane, Worcester</h2>
+    <p>A home daycare near Webster Square, Worcester, MA 01603. Full address shared when you book your visit.</p>
+    <div class="ctas" style="margin-top:20px"><a class="btn" href="#visit">Schedule a visit</a><a class="btn white" href="tel:+17743035976">(774) 303-5976</a></div>
+  </div>
+  <div class="map rv"><iframe title="Map: Gates Lane, Worcester MA" src="https://www.google.com/maps?q=Gates+Ln,+Worcester,+MA+01603&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+</div></section>
+
+<footer><b>Ololade Kehinde Agbarha Daycare Center</b>Licensed family child care · MA EEC #9142250 · Gates Lane, Worcester, MA 01603<br><a href="tel:+17743035976" style="color:#fff">(774) 303-5976</a></footer>
+<div class="dock"><a class="call" href="tel:+17743035976">Call</a><a class="bk" href="#visit"><svg width="20" height="20" aria-hidden="true"><use href="#wa"/></svg>Schedule a visit</a></div>
+
+<script>
+(() => {
+  const WA = '17743035976';
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .06 }) : null;
+  document.querySelectorAll('.rv').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+  const btn = document.getElementById('menuBtn'), drop = document.getElementById('drop'), scrim = document.getElementById('scrim'), head = document.querySelector('header.top');
+  const close = () => { drop.classList.remove('open'); scrim.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); };
+  btn.onclick = () => { const o = !drop.classList.contains('open'); drop.style.top = (head.getBoundingClientRect().bottom + 8) + 'px'; drop.classList.toggle('open', o); scrim.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); };
+  scrim.onclick = close; drop.querySelectorAll('a').forEach(a => a.onclick = close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  const f = document.getElementById('form'), err = document.getElementById('err');
+  const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })), pad = n => String(n).padStart(2, '0');
+  f.visit.min = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!f.name.value.trim()) { err.textContent = 'Please add your name.'; err.classList.add('show'); return; }
+    err.classList.remove('show');
+    const L = ['Hello! I found your daycare online and would like to schedule a visit.', '', 'Parent: ' + f.name.value.trim(), "Child's age: " + f.age.value, 'Days needed: ' + f.days.value];
+    if (f.start.value) L.push('Start (about): ' + new Date(f.start.value + '-01T00:00').toLocaleDateString('en-US', { month: 'long', year: 'numeric' }));
+    if (f.visit.value) L.push('Best day to visit: ' + new Date(f.visit.value + 'T00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }));
+    if (f.note.value.trim()) L.push('Questions: ' + f.note.value.trim());
+    L.push('', 'Thank you!');
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(L.join('\n')), '_blank', 'noopener');
+  });
+})();
+</script>
+
+<!-- jb-credit -->
+<div class="jb-credit" style="all:revert;display:block;margin:0;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));background:#111;color:#cfcfcf;font:500 13px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif;text-align:center;position:relative;z-index:1">Website designed by <b style="color:#fff;white-space:nowrap">Joseph Bortey</b> · <a href="tel:+233265768743" style="color:#fff;text-decoration:underline;white-space:nowrap">026 576 8743</a></div>
+<style>@media (max-width:760px){.jb-credit{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))!important}}</style>
+<img src="https://hits.sh/josephbortey2003-droid.github.io/ololade-demo.svg" alt="" width="1" height="1" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none" referrerpolicy="no-referrer" loading="eager">
+</body>
+</html>
